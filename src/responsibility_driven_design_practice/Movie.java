@@ -3,28 +3,20 @@ package responsibility_driven_design_practice;
 import responsibility_driven_design.Money;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
-public class Movie {
+public abstract class Movie {
     private String title;
     private Duration runningTime;
     private Money fee;
     private List<DiscountCondition> discountConditions;
 
-    private MovieType movieType;
-    private Money discountAmount;
-    private double discountPercent;
-
-    private Money calculateDiscountAmount() {
-        switch (movieType) {
-            case AMOUNT_DISCOUNT -> calculateAmountDiscountAmount();
-            case PERCENT_DISCOUNT -> calculatePercentDiscountAmount();
-            case NONE_DISCOUNT -> calculateNoneDiscountAmount();
-
-
-        }
-
-        throw new IllegalStateException();
+    public Movie(String title, Duration runningTime, Money fee, DiscountCondition... discountConditions) {
+        this.title = title;
+        this.runningTime = runningTime;
+        this.fee = fee;
+        this.discountConditions = Arrays.asList(discountConditions);
     }
 
     public Money calculateMovieFee(Screening screening) {
@@ -39,17 +31,6 @@ public class Movie {
         return discountConditions.stream().anyMatch(condition -> condition.isSatisfiedBy(screening));
     }
 
-    private Money calculateAmountDiscountAmount() {
-        return discountAmount;
-    }
-
-    private Money calculatePercentDiscountAmount() {
-        return fee.times(discountPercent);
-    }
-
-    private Money calculateNoneDiscountAmount() {
-        return Money.ZERO;
-    }
-
+    abstract protected Money calculateDiscountAmount();
 
 }
