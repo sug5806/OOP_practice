@@ -27,7 +27,7 @@ public class Movie {
         throw new IllegalStateException();
     }
 
-    public Money calculateMovieFee(int audienceCount) {
+    public Money calculateMovieFee(Screening screening) {
         if (isDiscountable(screening)) {
             return fee.minus(calculateDiscountAmount());
         }
