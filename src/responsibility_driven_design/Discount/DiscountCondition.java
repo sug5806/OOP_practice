@@ -1,6 +1,7 @@
 package responsibility_driven_design.Discount;
 
-import Screening.Screening;
+
+import responsibility_driven_design.Screening;
 
 public interface DiscountCondition{
     boolean isSatisfiedBy(Screening screening);

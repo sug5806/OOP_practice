@@ -1,9 +1,7 @@
 // 책임 : 요금 계산
 package responsibility_driven_design;
 
-import DiscountPolicy;
-import Money;
-import Screening;
+import responsibility_driven_design.Discount.DiscountPolicy;
 
 import java.time.Duration;
 
@@ -31,4 +29,6 @@ public class Movie {
     public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
         this.discountPolicy = discountPolicy;
     }
+
+
 }

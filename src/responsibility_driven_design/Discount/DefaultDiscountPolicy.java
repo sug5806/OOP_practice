@@ -1,7 +1,8 @@
 package responsibility_driven_design.Discount;
 
-import Money.Money;
-import Screening.Screening;
+
+import responsibility_driven_design.Money;
+import responsibility_driven_design.Screening;
 
 import java.util.ArrayList;
 import java.util.Arrays;

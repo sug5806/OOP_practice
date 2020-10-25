@@ -1,10 +1,7 @@
 // 책임 : 영화를 예매하는 것
 package responsibility_driven_design;
 
-import Customer.Customer;
-import Money.Money;
-import Movie.Movie;
-import Reservation.Reservation;
+import responsibility_driven_design.Customer.Customer;
 
 import java.time.LocalDateTime;
 

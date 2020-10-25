@@ -1,7 +1,6 @@
 package responsibility_driven_design.Discount;
 
-import Discount.DiscountCondition;
-import Screening.Screening;
+import responsibility_driven_design.Screening;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;

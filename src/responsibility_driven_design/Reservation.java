@@ -1,8 +1,6 @@
 package responsibility_driven_design;
 
-import Customer.Customer;
-import Money.Money;
-import Screening.Screening;
+import responsibility_driven_design.Customer.Customer;
 
 public class Reservation {
     private Customer customer;
